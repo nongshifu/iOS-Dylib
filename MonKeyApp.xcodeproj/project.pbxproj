@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAE6A33D25D2FDE100C90732 /* MDConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAE6A33C25D2FDE100C90732 /* MDConfig.plist */; };
+		EAE6A34725D2FDE100C90732 /* libMonKeyAppDylib.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAE6A34625D2FDE100C90732 /* libMonKeyAppDylib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EAE6A34C25D2FDE100C90732 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A34B25D2FDE100C90732 /* JavaScriptCore.framework */; };
+		EAE6A34E25D2FDE100C90732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A34D25D2FDE100C90732 /* Foundation.framework */; };
+		EAE6A35025D2FDE100C90732 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A34F25D2FDE100C90732 /* UIKit.framework */; };
+		EAE6A38B25D2FDE100C90732 /* LtShengMing.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A38A25D2FDE100C90732 /* LtShengMing.h */; };
+		EAE6A38D25D2FDE100C90732 /* LtGongNeng.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A38C25D2FDE100C90732 /* LtGongNeng.m */; };
+		EAE6A39725D2FEDF00C90732 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A34F25D2FDE100C90732 /* UIKit.framework */; };
+		EAE6A48F25D30E8300C90732 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A48E25D30E8300C90732 /* WebKit.framework */; };
+		EAE6A4A325D30EF200C90732 /* SCLSwitchView.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A49225D30EF200C90732 /* SCLSwitchView.h */; };
+		EAE6A4A425D30EF200C90732 /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A49325D30EF200C90732 /* SCLTimerDisplay.m */; };
+		EAE6A4A525D30EF200C90732 /* SCLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A49425D30EF200C90732 /* SCLButton.h */; };
+		EAE6A4A625D30EF200C90732 /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A49525D30EF200C90732 /* SCLAlertViewStyleKit.m */; };
+		EAE6A4A725D30EF200C90732 /* SCLMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A49625D30EF200C90732 /* SCLMacros.h */; };
+		EAE6A4A825D30EF200C90732 /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A49725D30EF200C90732 /* UIImage+ImageEffects.h */; };
+		EAE6A4A925D30EF200C90732 /* SCLAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A49825D30EF200C90732 /* SCLAlertView.h */; };
+		EAE6A4AA25D30EF200C90732 /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A49925D30EF200C90732 /* SCLAlertViewResponder.m */; };
+		EAE6A4AB25D30EF200C90732 /* SCLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A49A25D30EF200C90732 /* SCLTextView.m */; };
+		EAE6A4AC25D30EF200C90732 /* SCLSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A49B25D30EF200C90732 /* SCLSwitchView.m */; };
+		EAE6A4AD25D30EF200C90732 /* SCLAlertViewStyleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A49C25D30EF200C90732 /* SCLAlertViewStyleKit.h */; };
+		EAE6A4AE25D30EF200C90732 /* SCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A49D25D30EF200C90732 /* SCLButton.m */; };
+		EAE6A4AF25D30EF200C90732 /* SCLTimerDisplay.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A49E25D30EF200C90732 /* SCLTimerDisplay.h */; };
+		EAE6A4B025D30EF200C90732 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A49F25D30EF200C90732 /* UIImage+ImageEffects.m */; };
+		EAE6A4B125D30EF200C90732 /* SCLTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A4A025D30EF200C90732 /* SCLTextView.h */; };
+		EAE6A4B225D30EF200C90732 /* SCLAlertViewResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A4A125D30EF200C90732 /* SCLAlertViewResponder.h */; };
+		EAE6A4B325D30EF200C90732 /* SCLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A4A225D30EF200C90732 /* SCLAlertView.m */; };
+		EAE6A4B725D313FA00C90732 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A4B625D313FA00C90732 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAE6A34825D2FDE100C90732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAE6A32A25D2FDE100C90732 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAE6A34525D2FDE100C90732;
+			remoteInfo = MonKeyAppDylib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAE6A33225D2FDE100C90732 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EAE6A34725D2FDE100C90732 /* libMonKeyAppDylib.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EAA48CAA25E694DE00D3526B /* 原版.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "原版.m"; sourceTree = "<group>"; };
+		EAE6A33525D2FDE100C90732 /* MonKeyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonKeyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE6A33825D2FDE100C90732 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		EAE6A33A25D2FDE100C90732 /* quick-resign.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "quick-resign.sh"; sourceTree = "<group>"; };
+		EAE6A33C25D2FDE100C90732 /* MDConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MDConfig.plist; sourceTree = "<group>"; };
+		EAE6A33F25D2FDE100C90732 /* put ipa or app here */ = {isa = PBXFileReference; lastKnownFileType = text; path = "put ipa or app here"; sourceTree = "<group>"; };
+		EAE6A34025D2FDE100C90732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE6A34625D2FDE100C90732 /* libMonKeyAppDylib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libMonKeyAppDylib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE6A34B25D2FDE100C90732 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EAE6A34D25D2FDE100C90732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EAE6A34F25D2FDE100C90732 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EAE6A38A25D2FDE100C90732 /* LtShengMing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LtShengMing.h; sourceTree = "<group>"; };
+		EAE6A38C25D2FDE100C90732 /* LtGongNeng.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LtGongNeng.m; sourceTree = "<group>"; };
+		EAE6A48E25D30E8300C90732 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		EAE6A49225D30EF200C90732 /* SCLSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLSwitchView.h; sourceTree = "<group>"; };
+		EAE6A49325D30EF200C90732 /* SCLTimerDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLTimerDisplay.m; sourceTree = "<group>"; };
+		EAE6A49425D30EF200C90732 /* SCLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLButton.h; sourceTree = "<group>"; };
+		EAE6A49525D30EF200C90732 /* SCLAlertViewStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewStyleKit.m; sourceTree = "<group>"; };
+		EAE6A49625D30EF200C90732 /* SCLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLMacros.h; sourceTree = "<group>"; };
+		EAE6A49725D30EF200C90732 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		EAE6A49825D30EF200C90732 /* SCLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertView.h; sourceTree = "<group>"; };
+		EAE6A49925D30EF200C90732 /* SCLAlertViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewResponder.m; sourceTree = "<group>"; };
+		EAE6A49A25D30EF200C90732 /* SCLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLTextView.m; sourceTree = "<group>"; };
+		EAE6A49B25D30EF200C90732 /* SCLSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLSwitchView.m; sourceTree = "<group>"; };
+		EAE6A49C25D30EF200C90732 /* SCLAlertViewStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewStyleKit.h; sourceTree = "<group>"; };
+		EAE6A49D25D30EF200C90732 /* SCLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLButton.m; sourceTree = "<group>"; };
+		EAE6A49E25D30EF200C90732 /* SCLTimerDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLTimerDisplay.h; sourceTree = "<group>"; };
+		EAE6A49F25D30EF200C90732 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		EAE6A4A025D30EF200C90732 /* SCLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLTextView.h; sourceTree = "<group>"; };
+		EAE6A4A125D30EF200C90732 /* SCLAlertViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewResponder.h; sourceTree = "<group>"; };
+		EAE6A4A225D30EF200C90732 /* SCLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertView.m; sourceTree = "<group>"; };
+		EAE6A4B625D313FA00C90732 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAE6A32F25D2FDE100C90732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE6A48F25D30E8300C90732 /* WebKit.framework in Frameworks */,
+				EAE6A39725D2FEDF00C90732 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAE6A34325D2FDE100C90732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE6A34C25D2FDE100C90732 /* JavaScriptCore.framework in Frameworks */,
+				EAE6A35025D2FDE100C90732 /* UIKit.framework in Frameworks */,
+				EAE6A34E25D2FDE100C90732 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAC17BCA25D5A50A00B20D23 /* DTJZDylib */ = {
+			isa = PBXGroup;
+			children = (
+				EAA48CAA25E694DE00D3526B /* 原版.m */,
+				EAE6A4B625D313FA00C90732 /* main.m */,
+				EAE6A38A25D2FDE100C90732 /* LtShengMing.h */,
+				EAE6A38C25D2FDE100C90732 /* LtGongNeng.m */,
+			);
+			path = DTJZDylib;
+			sourceTree = "<group>";
+		};
+		EAE6A32925D2FDE100C90732 = {
+			isa = PBXGroup;
+			children = (
+				EAE6A33725D2FDE100C90732 /* MonKeyApp */,
+				EAE6A35125D2FDE100C90732 /* MonKeyAppDylib */,
+				EAE6A34A25D2FDE100C90732 /* Frameworks */,
+				EAE6A33625D2FDE100C90732 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAE6A33625D2FDE100C90732 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6A33525D2FDE100C90732 /* MonKeyApp.app */,
+				EAE6A34625D2FDE100C90732 /* libMonKeyAppDylib.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAE6A33725D2FDE100C90732 /* MonKeyApp */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6A33825D2FDE100C90732 /* icon.png */,
+				EAE6A34025D2FDE100C90732 /* Info.plist */,
+				EAE6A33925D2FDE100C90732 /* Scripts */,
+				EAE6A33B25D2FDE100C90732 /* Config */,
+				EAE6A33E25D2FDE100C90732 /* TargetApp */,
+			);
+			path = MonKeyApp;
+			sourceTree = "<group>";
+		};
+		EAE6A33925D2FDE100C90732 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6A33A25D2FDE100C90732 /* quick-resign.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		EAE6A33B25D2FDE100C90732 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6A33C25D2FDE100C90732 /* MDConfig.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		EAE6A33E25D2FDE100C90732 /* TargetApp */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6A33F25D2FDE100C90732 /* put ipa or app here */,
+			);
+			path = TargetApp;
+			sourceTree = "<group>";
+		};
+		EAE6A34A25D2FDE100C90732 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6A48E25D30E8300C90732 /* WebKit.framework */,
+				EAE6A34B25D2FDE100C90732 /* JavaScriptCore.framework */,
+				EAE6A34D25D2FDE100C90732 /* Foundation.framework */,
+				EAE6A34F25D2FDE100C90732 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAE6A35125D2FDE100C90732 /* MonKeyAppDylib */ = {
+			isa = PBXGroup;
+			children = (
+				EAC17BCA25D5A50A00B20D23 /* DTJZDylib */,
+				EAE6A49125D30EF200C90732 /* SCLAlertView */,
+			);
+			path = MonKeyAppDylib;
+			sourceTree = "<group>";
+		};
+		EAE6A49125D30EF200C90732 /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6A49225D30EF200C90732 /* SCLSwitchView.h */,
+				EAE6A49325D30EF200C90732 /* SCLTimerDisplay.m */,
+				EAE6A49425D30EF200C90732 /* SCLButton.h */,
+				EAE6A49525D30EF200C90732 /* SCLAlertViewStyleKit.m */,
+				EAE6A49625D30EF200C90732 /* SCLMacros.h */,
+				EAE6A49725D30EF200C90732 /* UIImage+ImageEffects.h */,
+				EAE6A49825D30EF200C90732 /* SCLAlertView.h */,
+				EAE6A49925D30EF200C90732 /* SCLAlertViewResponder.m */,
+				EAE6A49A25D30EF200C90732 /* SCLTextView.m */,
+				EAE6A49B25D30EF200C90732 /* SCLSwitchView.m */,
+				EAE6A49C25D30EF200C90732 /* SCLAlertViewStyleKit.h */,
+				EAE6A49D25D30EF200C90732 /* SCLButton.m */,
+				EAE6A49E25D30EF200C90732 /* SCLTimerDisplay.h */,
+				EAE6A49F25D30EF200C90732 /* UIImage+ImageEffects.m */,
+				EAE6A4A025D30EF200C90732 /* SCLTextView.h */,
+				EAE6A4A125D30EF200C90732 /* SCLAlertViewResponder.h */,
+				EAE6A4A225D30EF200C90732 /* SCLAlertView.m */,
+			);
+			name = SCLAlertView;
+			path = MonKeyAppDylib/SCLAlertView;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EAE6A34425D2FDE100C90732 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE6A4A725D30EF200C90732 /* SCLMacros.h in Headers */,
+				EAE6A4AF25D30EF200C90732 /* SCLTimerDisplay.h in Headers */,
+				EAE6A4B125D30EF200C90732 /* SCLTextView.h in Headers */,
+				EAE6A4A525D30EF200C90732 /* SCLButton.h in Headers */,
+				EAE6A4A925D30EF200C90732 /* SCLAlertView.h in Headers */,
+				EAE6A4AD25D30EF200C90732 /* SCLAlertViewStyleKit.h in Headers */,
+				EAE6A4A825D30EF200C90732 /* UIImage+ImageEffects.h in Headers */,
+				EAE6A4B225D30EF200C90732 /* SCLAlertViewResponder.h in Headers */,
+				EAE6A38B25D2FDE100C90732 /* LtShengMing.h in Headers */,
+				EAE6A4A325D30EF200C90732 /* SCLSwitchView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EAE6A33425D2FDE100C90732 /* MonKeyApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAE6A39325D2FDE100C90732 /* Build configuration list for PBXNativeTarget "MonKeyApp" */;
+			buildPhases = (
+				EAE6A32E25D2FDE100C90732 /* Sources */,
+				EAE6A32F25D2FDE100C90732 /* Frameworks */,
+				EAE6A33025D2FDE100C90732 /* ShellScript */,
+				EAE6A33125D2FDE100C90732 /* Resources */,
+				EAE6A33225D2FDE100C90732 /* CopyFiles */,
+				EAE6A33325D2FDE100C90732 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAE6A34925D2FDE100C90732 /* PBXTargetDependency */,
+			);
+			name = MonKeyApp;
+			productName = MonKeyApp;
+			productReference = EAE6A33525D2FDE100C90732 /* MonKeyApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EAE6A34525D2FDE100C90732 /* MonKeyAppDylib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAE6A39025D2FDE100C90732 /* Build configuration list for PBXNativeTarget "MonKeyAppDylib" */;
+			buildPhases = (
+				EAE6A34125D2FDE100C90732 /* ShellScript */,
+				EAE6A34225D2FDE100C90732 /* Sources */,
+				EAE6A34325D2FDE100C90732 /* Frameworks */,
+				EAE6A34425D2FDE100C90732 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonKeyAppDylib;
+			productName = MonKeyAppDylib;
+			productReference = EAE6A34625D2FDE100C90732 /* libMonKeyAppDylib.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAE6A32A25D2FDE100C90732 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					EAE6A33425D2FDE100C90732 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					EAE6A34525D2FDE100C90732 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = EAE6A32D25D2FDE100C90732 /* Build configuration list for PBXProject "MonKeyApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAE6A32925D2FDE100C90732;
+			productRefGroup = EAE6A33625D2FDE100C90732 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAE6A33425D2FDE100C90732 /* MonKeyApp */,
+				EAE6A34525D2FDE100C90732 /* MonKeyAppDylib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAE6A33125D2FDE100C90732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE6A33D25D2FDE100C90732 /* MDConfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EAE6A33025D2FDE100C90732 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /opt/MonkeyDev/Tools/pack.sh;
+		};
+		EAE6A33325D2FDE100C90732 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/Tools/pack.sh codesign";
+		};
+		EAE6A34125D2FDE100C90732 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAE6A32E25D2FDE100C90732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAE6A34225D2FDE100C90732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE6A4B725D313FA00C90732 /* main.m in Sources */,
+				EAE6A4B325D30EF200C90732 /* SCLAlertView.m in Sources */,
+				EAE6A4AC25D30EF200C90732 /* SCLSwitchView.m in Sources */,
+				EAE6A4AE25D30EF200C90732 /* SCLButton.m in Sources */,
+				EAE6A4AB25D30EF200C90732 /* SCLTextView.m in Sources */,
+				EAE6A4B025D30EF200C90732 /* UIImage+ImageEffects.m in Sources */,
+				EAE6A4A625D30EF200C90732 /* SCLAlertViewStyleKit.m in Sources */,
+				EAE6A38D25D2FDE100C90732 /* LtGongNeng.m in Sources */,
+				EAE6A4A425D30EF200C90732 /* SCLTimerDisplay.m in Sources */,
+				EAE6A4AA25D30EF200C90732 /* SCLAlertViewResponder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAE6A34925D2FDE100C90732 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAE6A34525D2FDE100C90732 /* MonKeyAppDylib */;
+			targetProxy = EAE6A34825D2FDE100C90732 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EAE6A38E25D2FDE100C90732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EAE6A38F25D2FDE100C90732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAE6A39125D2FDE100C90732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RVGRL9LRW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MonKeyAppDylib/MonKeyAppDylib-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/libMonKeyAppDylib.dylib";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"MonKeyAppDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-weak_library",
+					"$(MonkeyDevPath)/Frameworks/libsubstrate.dylib",
+					"-lcycript",
+					"-framework",
+					RevealServer,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		EAE6A39225D2FDE100C90732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 7RVGRL9LRW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MonKeyAppDylib/MonKeyAppDylib-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/libMonKeyAppDylib.dylib";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"MonKeyAppDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-weak_library",
+					"$(MonkeyDevPath)/Frameworks/libsubstrate.dylib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EAE6A39425D2FDE100C90732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RVGRL9LRW;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = MonKeyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HackMenu/Package/Library/MobileSubstrate/DynamicLibraries",
+				);
+				MONKEYDEV_ADD_SUBSTRATE = YES;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_DEFAULT_BUNDLEID = NO;
+				MONKEYDEV_INSERT_DYLIB = YES;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				MONKEYDEV_TARGET_APP = Optional;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = PUBG.By.iOsGoDs.Cn.MonKeyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAE6A39525D2FDE100C90732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RVGRL9LRW;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = MonKeyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HackMenu/Package/Library/MobileSubstrate/DynamicLibraries",
+				);
+				MONKEYDEV_ADD_SUBSTRATE = YES;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_DEFAULT_BUNDLEID = NO;
+				MONKEYDEV_INSERT_DYLIB = YES;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				MONKEYDEV_TARGET_APP = Optional;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = PUBG.By.iOsGoDs.Cn.MonKeyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAE6A32D25D2FDE100C90732 /* Build configuration list for PBXProject "MonKeyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE6A38E25D2FDE100C90732 /* Debug */,
+				EAE6A38F25D2FDE100C90732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAE6A39025D2FDE100C90732 /* Build configuration list for PBXNativeTarget "MonKeyAppDylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE6A39125D2FDE100C90732 /* Debug */,
+				EAE6A39225D2FDE100C90732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAE6A39325D2FDE100C90732 /* Build configuration list for PBXNativeTarget "MonKeyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE6A39425D2FDE100C90732 /* Debug */,
+				EAE6A39525D2FDE100C90732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAE6A32A25D2FDE100C90732 /* Project object */;
+}
