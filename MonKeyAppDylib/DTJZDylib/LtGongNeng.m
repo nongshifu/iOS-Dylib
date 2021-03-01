@@ -8,10 +8,8 @@
 #import <dlfcn.h>
 //默认 存放辅助更新的配置文件txt的 域名/目录
 #define homeurl @"https://iosgods.cn/html/game/"
-//默认辅助动态库文件名
-#define dylibname @"wzry.dylib"
 //默认辅助更新的配置文件
-#define fzjson @"wzry.txt"
+#define gamejson @"game.json"
 
 static NSString *MUFENGKEY  =   @"MUFENG";
 
@@ -20,9 +18,26 @@ static NSString *MUFENGKEY  =   @"MUFENG";
 - (BOOL)xzdylib;
 {
     @autoreleasepool {
+        //获取应用ID
         // 取得沙盒目录
         NSString *localPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        //获取info.plist
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *BundID = [infoDictionary objectForKey:@"CFBundleIdentifier"];
+        NSLog(@"🆚BundID=\n%@\n",BundID);
+        //通过应用ID查询游戏目录game.json获取到dylib地址
+        NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,gamejson];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
+        NSError *error;
+        NSDictionary *game = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSString *gameurl = [game objectForKey:BundID];
+        //得到dylib地址
+        NSLog(@"🆚游戏Dylib是:\n %@",gameurl);
+        // https://iosgods.cn/html/game/MonKeyApp.dylib
+        //从url中截取动态库名字
+        NSString *dylibname = [gameurl substringFromIndex:29];
         // 要检查的文件目录
+        NSLog(@"🆚动态库名字是:\n %@",dylibname);
         NSString *filePath = [localPath  stringByAppendingPathComponent:dylibname];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         if ([fileManager fileExistsAtPath:filePath]) {
@@ -70,8 +85,22 @@ static NSString *MUFENGKEY  =   @"MUFENG";
 - (BOOL)xzjson;
 {
     @autoreleasepool {
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *BundID = [infoDictionary objectForKey:@"CFBundleIdentifier"];
+        NSLog(@"🆚BundID=\n%@\n",BundID);
+        //通过应用ID查询游戏目录game.json获取到dylib地址
+        NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,gamejson];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
+        NSError *error;
+        NSDictionary *game = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSString *gameurl = [game objectForKey:BundID];
+        //得到dylib地址 https://iosgods.cn/html/game/MonKeyApp.dylib
+        //从url中截取动态库名字
+        NSString *dylibname = [gameurl substringFromIndex:29];
+        NSString*txt = [dylibname stringByReplacingOccurrencesOfString:@".dylib"withString:@".txt"];
+        NSLog(@"得到txt名字🆚%@", txt);
         //每次启动下载 存在就跳过
-        NSString *pinjieurl =[NSString stringWithFormat:@"%@%@",homeurl,fzjson];
+        NSString *pinjieurl =[NSString stringWithFormat:@"%@%@",homeurl,txt];
         NSURL *url = [NSURL URLWithString:pinjieurl];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -105,17 +134,31 @@ static NSString *MUFENGKEY  =   @"MUFENG";
 - (BOOL)jxjson;//4
 {
     @autoreleasepool {
-        //解析服务器版本
-        NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,fzjson];
-        
-        NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *BundID = [infoDictionary objectForKey:@"CFBundleIdentifier"];
+        NSLog(@"🆚BundID=\n%@\n",BundID);
+        //通过应用ID查询游戏目录game.json获取到dylib地址
+        NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,gamejson];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
         NSError *error;
+        NSDictionary *game = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSString *gameurl = [game objectForKey:BundID];
+        //得到dylib地址 https://iosgods.cn/html/game/MonKeyApp.dylib
+        //从url中截取动态库名字
+        NSString *dylibname = [gameurl substringFromIndex:29];
+        NSString*txt = [dylibname stringByReplacingOccurrencesOfString:@".dylib"withString:@".txt"];
+        NSLog(@"得到txt名字🆚%@", txt);
+        //解析服务器版本
+        NSString *txturl = [NSString stringWithFormat:@"%@%@",homeurl,txt];
+        NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:txturl]];
         NSDictionary *json1 = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
         NSArray *webbanben = [json1 objectForKey:@"banben"];
         NSLog(@"333333🆚服务器版本: %@",webbanben);
+        
+        
         //解析本地版本
-        NSLog(@"解析服务器json测试错误1");
-        NSString *jsonPath = [NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),fzjson];
+        
+        NSString *jsonPath = [NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),txt];
         NSData *data2 = [NSData dataWithContentsOfFile:jsonPath];
         NSDictionary *json2 = [NSJSONSerialization JSONObjectWithData:data2 options:kNilOptions error:&error];
         
@@ -132,56 +175,29 @@ static NSString *MUFENGKEY  =   @"MUFENG";
 {
     @autoreleasepool
     {
-        if ([bdbanben compare:webbanben options:NSNumericSearch] == NSOrderedDescending)
-        {
-            //解析服务器版本
-            NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,fzjson];
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
-            NSError *error;
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            
-            NSString *gonggao = [json objectForKey:@"gonggao"];
-            NSString *deburl = [json objectForKey:@"deburl"];
-            //更新提示并且删除
-            //如果本地版本大于服务器版本
-            NSLog(@"555AAAA🆚本地大于服务器更新");
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                
-                
-                SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
-                [alert addTimerToButtonIndex:0 reverse:YES];
-                [alert addButton:@"在线更新" actionBlock:^{
-                    
-                    [NSObject scwenjian];
-                    
-                    
-                    
-                }];
-                [alert addButton:@"官网更新" actionBlock:^{
-                    NSString *urlStr = [NSString stringWithFormat:@"%@", deburl];[[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
-                    
-                    
-                }];
-                [alert addButton:@"取消更新" actionBlock:^{
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [NSObject jzdylib];
-                    });
-                   
-                }];
-                [alert showSuccess:@"辅助更新" subTitle:gonggao closeButtonTitle:nil duration:10];
-            });
-            return 0;
-           
-        }else if ([bdbanben compare:webbanben options:NSNumericSearch] == NSOrderedSame)
+        if ([bdbanben compare:webbanben options:NSNumericSearch] == NSOrderedSame)
         {
             //版本相等如何有说明 就提示说明
             NSLog(@"555BBBB🆚等于服务器版本无需更新");
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,fzjson];
+                NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+                NSString *BundID = [infoDictionary objectForKey:@"CFBundleIdentifier"];
+                NSLog(@"🆚BundID=\n%@\n",BundID);
+                //通过应用ID查询游戏目录game.json获取到dylib地址
+                NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,gamejson];
                 NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
                 NSError *error;
-                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-                NSString *shuoming = [json objectForKey:@"shuoming"];
+                NSDictionary *game = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                NSString *gameurl = [game objectForKey:BundID];
+                //得到dylib地址 https://iosgods.cn/html/game/MonKeyApp.dylib
+                //从url中截取动态库名字
+                NSString *dylibname = [gameurl substringFromIndex:29];
+                NSString*txt = [dylibname stringByReplacingOccurrencesOfString:@".dylib"withString:@".txt"];
+                NSLog(@"得到txt名字🆚%@", txt);
+                NSString *txturl = [NSString stringWithFormat:@"%@%@",homeurl,txt];
+                NSData *txtdata = [NSData dataWithContentsOfURL:[NSURL URLWithString:txturl]];
+                NSDictionary *txtjson = [NSJSONSerialization JSONObjectWithData:txtdata options:kNilOptions error:&error];
+                NSString *shuoming = [txtjson objectForKey:@"shuoming"];
                 if (shuoming.length>5) {
                     SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
                     
@@ -207,18 +223,33 @@ static NSString *MUFENGKEY  =   @"MUFENG";
             return 0;
         }else
         {
-            //解析服务器版本
-            NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,fzjson];
+            NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+            NSString *BundID = [infoDictionary objectForKey:@"CFBundleIdentifier"];
+            NSLog(@"🆚BundID=\n%@\n",BundID);
+            //通过应用ID查询游戏目录game.json获取到dylib地址
+            NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,gamejson];
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
             NSError *error;
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            NSDictionary *game = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            NSString *gameurl = [game objectForKey:BundID];
+            //得到dylib地址 https://iosgods.cn/html/game/MonKeyApp.dylib
+            //从url中截取动态库名字
+            NSString *dylibname = [gameurl substringFromIndex:29];
+            NSString*txt = [dylibname stringByReplacingOccurrencesOfString:@".dylib"withString:@".txt"];
+            NSLog(@"得到txt名字🆚%@", txt);
+            //解析服务器版本
+            NSString *txturl = [NSString stringWithFormat:@"%@%@",homeurl,txt];
+            NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:txturl]];
+            
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
             
             NSString *gonggao = [json objectForKey:@"gonggao"];
             NSString *deburl = [json objectForKey:@"deburl"];
-            
             //更新提示并且删除
-            NSLog(@"5555CCCC🆚小于服务器版本");
+            //如果本地版本大于服务器版本
+            NSLog(@"555AAAA🆚版本不匹配更新");
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
                 
                 SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
                 [alert addTimerToButtonIndex:0 reverse:YES];
@@ -227,21 +258,24 @@ static NSString *MUFENGKEY  =   @"MUFENG";
                     [NSObject scwenjian];
                     
                     
+                    
                 }];
                 [alert addButton:@"官网更新" actionBlock:^{
-                    NSString *urlStr = [NSString stringWithFormat:@"%@", deburl];[[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+                    NSString *urlStr = [NSString stringWithFormat:@"%@", deburl];
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
                     
                     
                 }];
                 [alert addButton:@"取消更新" actionBlock:^{
-                    NSLog(@"🆚取消更新🆚");
-                    [NSObject jzdylib];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [NSObject jzdylib];
+                    });
+                   
                 }];
                 [alert showSuccess:@"辅助更新" subTitle:gonggao closeButtonTitle:nil duration:10];
             });
-            
-        }
-    return 0;
+            return 0;}
+        
     }
     
 }
@@ -251,6 +285,23 @@ static NSString *MUFENGKEY  =   @"MUFENG";
 {
     @autoreleasepool {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+            NSString *BundID = [infoDictionary objectForKey:@"CFBundleIdentifier"];
+            NSLog(@"🆚BundID=\n%@\n",BundID);
+            //通过应用ID查询游戏目录game.json获取到dylib地址
+            NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,gamejson];
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
+            NSError *error;
+            NSDictionary *game = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            NSString *gameurl = [game objectForKey:BundID];
+            //得到dylib地址
+            NSLog(@"🆚游戏Dylib是:\n %@",gameurl);
+            // https://iosgods.cn/html/game/MonKeyApp.dylib
+            //从url中截取动态库名字
+            NSString *dylibname = [gameurl substringFromIndex:29];
+            // 要检查的文件目录
+            NSLog(@"🆚动态库名字是:\n %@",dylibname);
             NSString *frameworkPath = [NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),dylibname];
             libHandle = NULL;
             libHandle = dlopen([frameworkPath cStringUsingEncoding:NSUTF8StringEncoding], RTLD_NOW);
@@ -278,7 +329,25 @@ static NSString *MUFENGKEY  =   @"MUFENG";
 - (BOOL)scwenjian;//7
 {
     @autoreleasepool {
-        NSString *txt = [NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),fzjson];
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *BundID = [infoDictionary objectForKey:@"CFBundleIdentifier"];
+        NSLog(@"🆚BundID=\n%@\n",BundID);
+        //通过应用ID查询游戏目录game.json获取到dylib地址
+        NSString *urlStr = [NSString stringWithFormat:@"%@%@",homeurl,gamejson];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
+        NSError *error;
+        NSDictionary *game = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSString *gameurl = [game objectForKey:BundID];
+        //得到dylib地址
+        NSLog(@"🆚游戏Dylib是:\n %@",gameurl);
+        // https://iosgods.cn/html/game/MonKeyApp.dylib
+        //从url中截取动态库名字
+        NSString *dylibname = [gameurl substringFromIndex:29];
+        NSString*txtname = [dylibname stringByReplacingOccurrencesOfString:@".dylib"withString:@".txt"];
+        NSLog(@"得到txt名字🆚%@", txtname);
+        // 要检查的文件目录
+        NSLog(@"🆚动态库名字是:\n %@",dylibname);
+        NSString *txt = [NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),txtname];
         NSString *dylib = [NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),dylibname];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         [fileManager removeItemAtPath:dylib error:NULL];
@@ -304,109 +373,6 @@ static NSString *MUFENGKEY  =   @"MUFENG";
         return 0;
     }
     
-}
-
--(BOOL)huoqukey//5
-{
-    @autoreleasepool {
-        NSURL *mysqlurl=[NSURL URLWithString:@"https://iosgods.cn/"];
-        //创建请求命令
-        NSURLRequest *request=[NSURLRequest requestWithURL:mysqlurl];
-        //创建会话对象 通过单例方法实现
-        NSURLSession *session=[NSURLSession sharedSession];
-        //执行会话的任务，通过request请求 获取data对象
-        NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-          
-            if(error == nil && data != nil){
-                
-                NSLog(@"开始循环");
-                //获得队列
-                //设置时间间隔
-                static dispatch_source_t _timer;
-                NSTimeInterval period = 5.f;
-                dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-                _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-                dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), period * NSEC_PER_SEC, 0);
-                dispatch_source_set_event_handler(_timer, ^{
-                NSString *html = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-               
-                NSRange name1 = [html rangeOfString:@"我日"];
-                NSRange name2 = [html rangeOfString:@"你妈"];
-                NSRange name = NSMakeRange(name1.location + name1.length, name2.location - name1.location - name1.length);
-                NSString *member = [html substringWithRange:name];
-                NSLog(@"🆚打印出用用户ID啦：    %@",member);
-                NSString *url = @"https://iosgods.cn/html/index.php?member_id=";
-                
-                NSString * mysql = [url stringByAppendingString:member];
-                NSURL *usidurl=[NSURL URLWithString:mysql];
-                //创建请求命令
-                NSURLRequest *request=[NSURLRequest requestWithURL:usidurl];
-                //创建会话对象 通过单例方法实现
-                NSURLSession *session=[NSURLSession sharedSession];
-                NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-                                            {
-                    if(error == nil && data != nil){
-                        NSString *html = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                        NSLog(@"这是设备ID🆚：%@",html);
-                        NSLog(@"进程🆚%@", [NSThread currentThread]);
-                        if ((html.length)>50) {
-                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
-                                [alert addTimerToButtonIndex:0 reverse:YES];
-                                [alert addButton:@"退出其他设备" actionBlock:^{
-                                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                        [NSObject shebei];
-                                       
-                                        NSLog(@"🆚大于50被迫下线");
-                                        dispatch_source_cancel(_timer);
-                                    });
-                                    
-                                }];
-                                [alert showSuccess:@"被迫下线" subTitle:@"您的账号在其地方登入" closeButtonTitle:nil duration:5];
-                            });
-                            
-                        }
-                        if ((html.length)<50 && 20<(html.length)){
-                            NSLog(@"🆚小于50不提示正常玩");
-                            return;
-                        }
-                    }else{
-                        NSLog(@"%@",error);
-                    }
-                }];
-                [task resume];
-                });
-                // 开启定时器
-                dispatch_resume(_timer);
-                
-            }
-            
-            else
-            {
-                NSLog(@"🆚首页加载失败🆚");
-                return;
-                
-            }
-        }];
-            [task resume];
-        
-    }
-    return 0;
-}
-- (BOOL)shebei//6
-{
-    @autoreleasepool {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-               
-               UIWindow    *window =   [[UIApplication sharedApplication] keyWindow];
-               WKWebView   *webView    =   [[WKWebView alloc] initWithFrame:window.bounds];
-               
-              
-               [webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://iosgods.cn/index.php?/settings/devices"]]];
-               [window addSubview:webView];
-             });
-        return 0;
-    }
 }
 
 @end

@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA38ACA625EBB71600EC47AE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EA38ACA025EBB71600EC47AE /* libz.tbd */; };
 		EAE6A33D25D2FDE100C90732 /* MDConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAE6A33C25D2FDE100C90732 /* MDConfig.plist */; };
 		EAE6A34725D2FDE100C90732 /* libMonKeyAppDylib.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAE6A34625D2FDE100C90732 /* libMonKeyAppDylib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		EAE6A34C25D2FDE100C90732 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A34B25D2FDE100C90732 /* JavaScriptCore.framework */; };
 		EAE6A34E25D2FDE100C90732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A34D25D2FDE100C90732 /* Foundation.framework */; };
 		EAE6A35025D2FDE100C90732 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A34F25D2FDE100C90732 /* UIKit.framework */; };
 		EAE6A38B25D2FDE100C90732 /* LtShengMing.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A38A25D2FDE100C90732 /* LtShengMing.h */; };
 		EAE6A38D25D2FDE100C90732 /* LtGongNeng.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A38C25D2FDE100C90732 /* LtGongNeng.m */; };
 		EAE6A39725D2FEDF00C90732 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A34F25D2FDE100C90732 /* UIKit.framework */; };
-		EAE6A48F25D30E8300C90732 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6A48E25D30E8300C90732 /* WebKit.framework */; };
 		EAE6A4A325D30EF200C90732 /* SCLSwitchView.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A49225D30EF200C90732 /* SCLSwitchView.h */; };
 		EAE6A4A425D30EF200C90732 /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6A49325D30EF200C90732 /* SCLTimerDisplay.m */; };
 		EAE6A4A525D30EF200C90732 /* SCLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A49425D30EF200C90732 /* SCLButton.h */; };
@@ -60,6 +59,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EA38ACA025EBB71600EC47AE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		EAA48CAA25E694DE00D3526B /* 原版.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "原版.m"; sourceTree = "<group>"; };
 		EAE6A33525D2FDE100C90732 /* MonKeyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonKeyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE6A33825D2FDE100C90732 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -68,12 +68,10 @@
 		EAE6A33F25D2FDE100C90732 /* put ipa or app here */ = {isa = PBXFileReference; lastKnownFileType = text; path = "put ipa or app here"; sourceTree = "<group>"; };
 		EAE6A34025D2FDE100C90732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE6A34625D2FDE100C90732 /* libMonKeyAppDylib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libMonKeyAppDylib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAE6A34B25D2FDE100C90732 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EAE6A34D25D2FDE100C90732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAE6A34F25D2FDE100C90732 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAE6A38A25D2FDE100C90732 /* LtShengMing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LtShengMing.h; sourceTree = "<group>"; };
 		EAE6A38C25D2FDE100C90732 /* LtGongNeng.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LtGongNeng.m; sourceTree = "<group>"; };
-		EAE6A48E25D30E8300C90732 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		EAE6A49225D30EF200C90732 /* SCLSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLSwitchView.h; sourceTree = "<group>"; };
 		EAE6A49325D30EF200C90732 /* SCLTimerDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLTimerDisplay.m; sourceTree = "<group>"; };
 		EAE6A49425D30EF200C90732 /* SCLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLButton.h; sourceTree = "<group>"; };
@@ -99,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE6A48F25D30E8300C90732 /* WebKit.framework in Frameworks */,
+				EA38ACA625EBB71600EC47AE /* libz.tbd in Frameworks */,
 				EAE6A39725D2FEDF00C90732 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE6A34C25D2FDE100C90732 /* JavaScriptCore.framework in Frameworks */,
 				EAE6A35025D2FDE100C90732 /* UIKit.framework in Frameworks */,
 				EAE6A34E25D2FDE100C90732 /* Foundation.framework in Frameworks */,
 			);
@@ -186,8 +183,7 @@
 		EAE6A34A25D2FDE100C90732 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EAE6A48E25D30E8300C90732 /* WebKit.framework */,
-				EAE6A34B25D2FDE100C90732 /* JavaScriptCore.framework */,
+				EA38ACA025EBB71600EC47AE /* libz.tbd */,
 				EAE6A34D25D2FDE100C90732 /* Foundation.framework */,
 				EAE6A34F25D2FDE100C90732 /* UIKit.framework */,
 			);
@@ -386,7 +382,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos";
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -553,6 +549,7 @@
 					"$(MonkeyDevPath)/Frameworks/**",
 					"$(MonkeyDevPath)/Librarys/**",
 					"$(MonkeyDevTheosPath)/vendor/lib",
+					"$(PROJECT_DIR)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -617,6 +614,7 @@
 					"$(MonkeyDevPath)/Frameworks/**",
 					"$(MonkeyDevPath)/Librarys/**",
 					"$(MonkeyDevTheosPath)/vendor/lib",
+					"$(PROJECT_DIR)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -667,6 +665,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7RVGRL9LRW;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MonKeyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -694,6 +696,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7RVGRL9LRW;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MonKeyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
